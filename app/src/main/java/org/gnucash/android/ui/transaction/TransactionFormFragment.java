@@ -162,6 +162,11 @@ public class TransactionFormFragment extends Fragment implements
 	 */
 	@BindView(R.id.currency_symbol) TextView mCurrencyTextView;
 
+    /**
+     * Displays the selected transfer account.
+     */
+	@BindView(R.id.transfer_account_name) TextView mTransferAccountName;
+
 	/**
 	 * Input field for the transaction description (note)
 	 */
@@ -680,6 +685,13 @@ public class TransactionFormFragment extends Fragment implements
         });
 
         mRecurrenceTextView.setOnClickListener(new RecurrenceViewClickListener((AppCompatActivity) getActivity(), mRecurrenceRule, this));
+
+        mTransferAccountName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getContext(), "yo!", Toast.LENGTH_SHORT);
+            }
+        });
 	}
 
     /**
